@@ -2,6 +2,8 @@ if (typeof browser === "undefined") {
   var browser = chrome;
 }
 
+document.getElementById("year").textContent = new Date().getFullYear();
+
 /**
  *
  * @param {chrome.tabCapture.CaptureOptions} options
