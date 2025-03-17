@@ -1,7 +1,7 @@
 {
   "name": "Raver",
   "description": "Rave on any website with Raver!!",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifest_version": 3,
   "action": {
     "default_popup": "popup/index.html",
