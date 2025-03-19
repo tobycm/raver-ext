@@ -26,6 +26,7 @@ fromTabButton.addEventListener("click", async () => {
   browser.scripting.executeScript({ target: { tabId: tab.id }, files: ["pixi.js/pixi.min.js"] });
   browser.scripting.executeScript({ target: { tabId: tab.id }, files: ["pixi.js/unsafe-eval.js"] });
   browser.scripting.executeScript({ target: { tabId: tab.id }, files: ["main.js"] });
+  browser.scripting.executeScript({ target: { tabId: tab.id }, files: ["content.js"] });
 
   const streamId = await getMediaStreamIdPromise({ targetTabId: tab.id });
 
