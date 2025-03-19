@@ -91,15 +91,15 @@ async function rave(options) {
 
   // behindStage.addChild(bassVisualizer);
 
-  function renderBass(data) {
-    const bassData = data.slice(0, Math.floor(200 / eachBinWidth));
+  // function renderBass(data) {
+  //   const bassData = data.slice(0, Math.floor(200 / eachBinWidth));
 
-    const bassIntensity = bassData.reduce((acc, curr) => acc + curr, 0) / 255 / bassData.length;
-    bassVisualizer.tint = sigmoid(bassIntensity, 10, 0.5) * 0xffffff;
-  }
+  //   const bassIntensity = bassData.reduce((acc, curr) => acc + curr, 0) / 255 / bassData.length;
+  //   bassVisualizer.tint = sigmoid(bassIntensity, 10, 0.5) * 0xffffff;
+  // }
 
   app.renderer?.on("resize", () => {
-    bassVisualizer.clear().rect(0, 0, window.innerWidth, window.innerHeight).fill(gradient);
+    // bassVisualizer.clear().rect(0, 0, window.innerWidth, window.innerHeight).fill(gradient);
   });
 
   const lightsCount = 30;
@@ -156,7 +156,7 @@ async function rave(options) {
         .rect(i * barWidth, window.innerHeight - intensity * window.innerHeight, barWidth, intensity * window.innerHeight)
         .fill(`hsl(${hue}, 100%, 50%)`);
 
-      bar.tint = intensity * 0xffffff;
+      bar.alpha = intensity + 0.1;
     });
   }
 
